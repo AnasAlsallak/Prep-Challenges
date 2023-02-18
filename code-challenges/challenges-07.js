@@ -7,13 +7,13 @@
 //  Write a function that takes an object and returns the formatted text based on the provided object as the example:
 // 
 // Input:
-//  let obj = {
-//      firstName: 'Ellie',
-//      lastName: 'jon',
-//      age: 67,
-//      hobby: 'Gaming and Sleeping'
-//  }
-//
+// let obj = {
+//     firstName: 'Ellie',
+//     lastName: 'jon',
+//     age: 67,
+//     hobby: 'Gaming and Sleeping'
+// }
+
 //  Output: "my name is Ellie Jon I am 67 YO, and I love Gaming and Sleeping."
 
 //  Note that:
@@ -22,17 +22,19 @@
 
 const objLat = (obj) => {
     // write your code here
+    return `my name is ${obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1)} I am ${obj.age} YO, and I love ${obj.hobby}.`;
 };
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 //  Challenge 2:
 //  Required:
-//
+
 //  Rekey is receiving info about applicants for his startup company (as array of objects), containing first name,
 //  last name, age and technology they know.
 //  Rekey only cares about the full name and the technology if the applicant has more than one year of Experience
-//
+
 //  Reformat the array of objects that you are receiving by returning a new array of objects that contains only
 //  fullName and tech if the applicant has more than one year of Experience
 
@@ -63,7 +65,7 @@ const objLat = (obj) => {
 //         tech: "Java"
 //     }
 // ]
-//
+
 // Output:
 // [
 //     {
@@ -86,6 +88,32 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
     // write your code here
+    let a = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].yearsOfExperience > 1) {
+            let fullName;
+            if (arr[i].firstName != null && arr[i].lastName != null) {
+                let cv = {
+                    fullName: arr[i].firstName + " " + arr[i].lastName,
+                    tech: arr[i].tech
+                   }
+                   a.push(cv);    
+            } else if (arr[i].firstName != null && arr[i].lastName == null) {
+                let cv = {
+                    fullName: arr[i].firstName,
+                    tech: arr[i].tech
+                   }
+                   a.push(cv);  
+            }else if (arr[i].firstName == null && arr[i].lastName != null) {
+                let cv = {
+                    fullName: arr[i].lastName,
+                    tech: arr[i].tech
+                   }
+                   a.push(cv);  
+            }
+        }
+    };
+    return a;
 };
 // -------------------------------------------------------------------------------------------------------
 
