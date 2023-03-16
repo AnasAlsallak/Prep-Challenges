@@ -19,9 +19,10 @@
 //  
 
 const arrInc = (arr) => {
-    let result = [];
-    // write your code here
-    return result;
+        arr.forEach((num, index) => {
+            arr[index] = num +10;
+        });
+    return arr;
 }
 // -------------------------------------------------------------------------------------------------------
 
