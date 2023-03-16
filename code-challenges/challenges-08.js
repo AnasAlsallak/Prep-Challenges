@@ -28,6 +28,11 @@
 
 const customerAndAge = (obj) => {
   // write your code here
+  let arr = [];
+  for (const property in obj) {
+    arr.push(`Customer Name :${property} , Age :${obj[property]}`);
+  }
+  return arr;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -54,6 +59,11 @@ const customerAndAge = (obj) => {
 
 const getEntries = (obj) => {
   // write your code here
+  let arr = [];
+  for (const [key, value] of Object.entries(obj)) {
+    arr.push(`${key}: ${value}`);
+  }
+  return arr;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -92,11 +102,16 @@ const courses = [
   },
 ];
 
-const getInfo = (arr) => {
+const getInfo = (courses) => {
   let coursesName = [];
   let studentsName = [];
   // write your code here
-
+  for (let i = 0; i < courses.length; i++) {
+    coursesName.push(courses[i].course);
+    for (let j = 0; j < courses[i].Students.length; j++) {
+      studentsName.push(courses[i].Students[j]);
+    }
+  }
   return { coursesName, studentsName };
 };
 // -------------------------------------------------------------------------------------------------------
@@ -120,6 +135,19 @@ const getInfo = (arr) => {
 
 const getStudents = (arr) => {
   // write your code here
+  let Narr = [];
+  let item = {};
+  for (let i = 0; i < arr.length; i++) {
+    for (let a = 0; a < courses.length; a++) {
+      for (let j = 0; j < courses[a].Students.length; j++) {
+        if (courses[a].Students[j] === arr[i]) {
+          item = { Student: arr[i], course: courses[a].course }
+          Narr.push(item);
+        }
+      }
+    }
+  }
+  return Narr;
 };
 //  ------------------------------------------------------------------------------------------------------
 
