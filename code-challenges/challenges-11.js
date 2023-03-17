@@ -18,6 +18,8 @@
 
 function square(arr) {
     // write your code here
+    const resMap = arr.map(x => x * x);
+    return resMap;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -57,6 +59,10 @@ function square(arr) {
 
 function fullName(arr) {
     // write your code here
+    const resMap = arr.map( x => {
+       return `${x.firstName} ${x.lastName}`;
+    });
+    return resMap;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -122,8 +128,17 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-    // write your code here
-}
+    const resMap = arr.map(x => {
+      let sum = 0;
+      x.gradsList.forEach(element => {
+        sum += element;
+      });
+      const avg = sum / x.gradsList.length;
+      x.avg = avg;
+    }); 
+    return arr;
+  }
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -197,6 +212,21 @@ function gradesAvg(arr) {
 
 function studentsResult(arr) {
     // write your code here
+    const resMap = arr.map(x => {
+        let sum = 0;
+        x.gradsList.forEach(element => {
+          sum += element;
+        });
+        const avg = sum / x.gradsList.length;
+        x.avg = avg;
+        if(avg >= 50)
+        {
+          x.result = "Passed"
+        } else {
+            x.result = "Failed"
+        }
+      }); 
+      return arr;
 }
 // -------------------------------------------------------------------------------------------------------
 
