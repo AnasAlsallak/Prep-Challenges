@@ -19,6 +19,8 @@
 
 const oddFiltration = (arr) => {
     // write your code here
+    const result = arr.filter(num => num % 2 != 0);
+    return result;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -71,6 +73,18 @@ const oddFiltration = (arr) => {
 
 const cvsFiltration = (arr) => {
     // write your code here
+    let filterdArray = arr.filter((cv) => {
+        return cv.yearsOfExperience > 4 && cv.tech === "JS";
+    });
+
+    const foramtedArr = filterdArray.map((cv) => {
+        var fullName = cv.firstName;
+        if (cv.LastName !== null) {
+            fullName += " " + cv.LastName;
+        }
+        return { fullName: fullName, tech: cv.tech };
+    })
+    return foramtedArr;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -82,11 +96,20 @@ const cvsFiltration = (arr) => {
 
 // Input: ['car', 'boy', 'spy', 'building', 'why', 'dry' ]
 // Output: ['spy', 'why', 'dry']
-// 
 
+function vowelless(element) {
+    for (let i = 0; i < element.length; i++) {
+        if (element[i] === 'a' || element[i] === 'e' || element[i] === 'i' || element[i] === 'o' || element[i] === 'u') {
+            return false;
+        }
+    }
+    return true;
+};
 const vowelsFiltration = (arr) => {
     // write your code here
-} 
+    const r = arr.filter(x => vowelless(x));
+    return r;
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
