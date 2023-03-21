@@ -40,7 +40,7 @@
 
 const objectCounter = (obj) => {
     // write your code here
-
+    return obj.reduce(previous => previous + 1, 0)
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -61,7 +61,10 @@ const objectCounter = (obj) => {
 
 const stringReverse = (str) => {
     // write your code here
-
+    return str.split(" ").reduce((previous, current) => {
+        if (previous === "") return current;
+        return current + " " + previous;
+    }, "")
 }
 // -------------------------------------------------------------------------------------------------------
 

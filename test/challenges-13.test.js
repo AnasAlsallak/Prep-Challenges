@@ -1,7 +1,7 @@
 const { objectCounter, stringReverse, statistics, cleanData } = require("../code-challenges/challenges-13");
 
 describe('Challenge13-01', () => {
-    test.skip('Object-Counter', () => {
+    test('Object-Counter', () => {
         var voters = [
             {
                 voter_Name: "Adam Scott",
@@ -41,7 +41,7 @@ describe('Challenge13-01', () => {
 });
 
 describe('Challenge13-02', () => {
-    test.skip('String-Reverse', () => {
+    test('String-Reverse', () => {
 
         let test1 = 'you shall not pass';
         let res1 = 'pass not shall you';
@@ -56,7 +56,7 @@ describe('Challenge13-02', () => {
 })
 
 describe('Challenge13-03', () => {
-    test.skip('Get-statistics', () => {
+    test('Get-statistics', () => {
 
         let voters = [
             {
